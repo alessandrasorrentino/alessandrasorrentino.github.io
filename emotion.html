@@ -26,17 +26,60 @@
  <body style="background-color:black">
 	<center>
 		<h1>The expression to learn is: </h1><h1 id="h1_e"> </h1>
-	<h2>We are willing to make the GrownMeUp robot able to express the appropriate emotion during the interaction. 
-		 As first step, we need to teach the robot to express the appropriate facial expression... and here, you can make a difference ! 
-	</h2>
-	<br><button type="button" name="button_start" onclick="start_teach()">Click Me!</button>
+<canvas id="eye_r_u" width="600" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="eye_r_d" width="600" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+	<!--<br><button type="button" name="button_start" onclick="start_teach()">Click Me!</button> -->
 	</center> 
 </body>
  <script type="text/javascript" type="text/javascript">
-	var emotions = ['Happyness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
- 	function set_expression(){
-		var current_emotion = items[Math.floor(Math.random() * items.length)];
-		document.getElementById("h1_e").innerHTML=current_emotion;
+	<!-- EYES -->
+var c = document.getElementById("eye_r_u");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(100, 250, 50, 0, 2 * Math.PI);
+ctx.fillStyle="blue"
+ctx.fill();
+ctx.beginPath();
+ctx.arc(170, 140, 50, 0, 2 * Math.PI);
+ctx.fillStyle="blue"
+ctx.fill();
+ctx.beginPath();
+ctx.arc(300, 80, 50, 0, 2 * Math.PI);
+ctx.fillStyle="blue"
+ctx.fill();
+ctx.beginPath();
+ctx.arc(440, 140, 50, 0, 2 * Math.PI);
+ctx.fillStyle="blue"
+ctx.fill();
+ctx.beginPath();
+ctx.arc(500, 250, 50, 0, 2 * Math.PI);
+ctx.fillStyle="blue"
+ctx.fill();
+
+var crd = document.getElementById("eye_r_d");
+var crd_ctx = crd.getContext("2d");
+crd_ctx.beginPath();
+crd_ctx.arc(130, 60, 50, 0, 2 * Math.PI);
+crd_ctx.fillStyle="blue"
+crd_ctx.fill();
+crd_ctx.beginPath();
+crd_ctx.arc(230, 140, 50, 0, 2 * Math.PI);
+crd_ctx.fillStyle="blue"
+crd_ctx.fill();
+crd_ctx.beginPath();
+crd_ctx.arc(380, 140, 50, 0, 2 * Math.PI);
+crd_ctx.fillStyle="blue"
+crd_ctx.fill();
+crd_ctx.arc(470, 60, 50, 0, 2 * Math.PI);
+crd_ctx.fillStyle="blue"
+crd_ctx.fill();
+var emotions = ['Happyness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
+ function set_expression(){
+	var current_emotion = items[Math.floor(Math.random() * items.length)];
+	document.getElementById("h1_e").innerHTML=current_emotion;
  }
  </script>
 </html>
