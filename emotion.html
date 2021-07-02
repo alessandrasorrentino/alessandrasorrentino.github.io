@@ -30,9 +30,9 @@
 Your browser does not support the HTML5 canvas tag.</canvas>
 <canvas id="eye_r_u" width="600" height="300" style="position:fixed; top:10%; right:10%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-<canvas id="eye_l_d" width="600" height="300" style="position:fixed; top:20%; left:10%;">
+<canvas id="eye_l_d" width="600" height="300" style="position:fixed; top:40%; left:10%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-<canvas id="eye_r_d" width="600" height="300" style="position:fixed; top:20%; left:10%;">
+<canvas id="eye_r_d" width="600" height="300" style="position:fixed; top:40%; left:10%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 	<!--<br><button type="button" name="button_start" onclick="start_teach()">Click Me!</button> -->
@@ -40,7 +40,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 </body>
  <script type="text/javascript" type="text/javascript">
 	<!-- EYES -->
-var c = document.getElementById("eye_r_u");
+var c = document.getElementById("eye_l_u");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(100, 250, 50, 0, 2 * Math.PI);
@@ -63,7 +63,7 @@ ctx.arc(500, 250, 50, 0, 2 * Math.PI);
 ctx.fillStyle="blue"
 ctx.fill();
 
-var crd = document.getElementById("eye_r_d");
+var crd = document.getElementById("eye_l_d");
 var crd_ctx = crd.getContext("2d");
 crd_ctx.beginPath();
 crd_ctx.arc(130, 60, 50, 0, 2 * Math.PI);
