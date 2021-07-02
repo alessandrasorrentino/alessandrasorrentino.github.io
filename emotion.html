@@ -1,9 +1,8 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  	<title>FACE</title>
-	<meta charset="utf-8">
+    <script src="js/canvas.js"></script>  
+<meta charset="utf-8">
 	<style>
 		body,html{
 			height:100%;
@@ -40,7 +39,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 </body>
  <script type="text/javascript" type="text/javascript">
 	<!-- EYES -->
-var c = document.getElementById("eye_l_u");
+/*var c = document.getElementById("eye_l_u");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(100, 250, 50, 0, 2 * Math.PI);
@@ -79,7 +78,7 @@ crd_ctx.fillStyle="blue"
 crd_ctx.fill();
 crd_ctx.arc(470, 60, 50, 0, 2 * Math.PI);
 crd_ctx.fillStyle="blue"
-crd_ctx.fill();
+crd_ctx.fill();*/
 var emotions = ['Happyness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
  function set_expression(){
 	var current_emotion = items[Math.floor(Math.random() * items.length)];
