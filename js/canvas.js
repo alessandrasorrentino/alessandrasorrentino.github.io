@@ -1,6 +1,5 @@
-<!-- EYES -->
-var eyes_configurations=['0','1','2','3','4']
-const eyes_conf=0
+var eyes_configurations=['0','1','2','3','4'];
+const eyes_conf=0;
 function Draw_eye_l_u() {
     var canvas = document.getElementById("eye_l_u");
     var ctx = canvas.getContext("2d");
