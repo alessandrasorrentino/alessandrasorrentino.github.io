@@ -4,7 +4,7 @@ function Draw_eye_l_u() {
     var canvas = document.getElementById("eye_l_u");
     var ctx = canvas.getContext("2d");
     switch (expr){
-      case '0' or case '2':
+      case '0' || case '2':
       ctx.beginPath();
       ctx.arc(100, 250, 50, 0, 2 * Math.PI);
       ctx.fillStyle="blue"
@@ -48,7 +48,7 @@ function Draw_eye_r_u() {
     var canvas = document.getElementById("eye_r_u");
     var ctx = canvas.getContext("2d");
     switch (expr){
-    case '0' or case '2':
+    case '0' || case '2':
         ctx.beginPath();
         ctx.arc(100, 250, 50, 0, 2 * Math.PI);
         ctx.fillStyle="blue"
@@ -92,7 +92,7 @@ function Draw_eye_l_d() {
     var canvas = document.getElementById("eye_l_d");
     var crd_ctx = canvas.getContext("2d");
     switch (expr){
-      case '1' or case '2':
+      case '1' || case '2':
         crd_ctx.beginPath();
         crd_ctx.arc(130, 60, 50, 0, 2 * Math.PI);
         crd_ctx.fillStyle="blue"
@@ -127,7 +127,7 @@ function Draw_eye_l_d() {
     var canvas = document.getElementById("eye_r_d");
     var crd_ctx = canvas.getContext("2d");
     switch (expr){
-      case '1' or case '2':
+      case '1' || case '2':
         crd_ctx.beginPath();
         crd_ctx.arc(130, 60, 50, 0, 2 * Math.PI);
         crd_ctx.fillStyle="blue"
