@@ -1,7 +1,6 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <script src="js/canvas.js"></script>  
 <meta charset="utf-8">
 	<style>
 		body,html{
@@ -25,62 +24,26 @@
  <body style="background-color:black">
 	<center>
 		<h1>The expression to learn is: </h1><h1 id="h1_e"> </h1>
-<canvas id="eye_l_u" width="600" height="300" style="position:fixed; top:10%; left:10%;">
+<!-- dimentsion big canvas: 600(w)*300(h) -->
+<canvas id="eye_l_u" width="300" height="150" style="position:fixed; top:20%; left:17%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-<canvas id="eye_r_u" width="600" height="300" style="position:fixed; top:10%; right:10%;">
+<canvas id="eye_r_u" width="300" height="150" style="position:fixed; top:20%; right:17%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-<canvas id="eye_l_d" width="600" height="300" style="position:fixed; top:40%; left:10%;">
+<canvas id="eye_l_d" width="300" height="150" style="position:fixed; top:40%; left:17%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-<canvas id="eye_r_d" width="600" height="300" style="position:fixed; top:40%; left:10%;">
+<canvas id="eye_r_d" width="300" height="150" style="position:fixed; top:40%; right:17%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-
-	<!--<br><button type="button" name="button_start" onclick="start_teach()">Click Me!</button> -->
+<canvas id="mouth" width="600" height="400" style="position:fixed; top:55%; left:30%;"></canvas>
 	</center> 
+  <script src="js/draw_eyes.js"></script>
+  <script src="js/draw_mouth.js"></script>
 </body>
  <script type="text/javascript" type="text/javascript">
-/*var c = document.getElementById("eye_l_u");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(100, 250, 50, 0, 2 * Math.PI);
-ctx.fillStyle="blue"
-ctx.fill();
-ctx.beginPath();
-ctx.arc(170, 140, 50, 0, 2 * Math.PI);
-ctx.fillStyle="blue"
-ctx.fill();
-ctx.beginPath();
-ctx.arc(300, 80, 50, 0, 2 * Math.PI);
-ctx.fillStyle="blue"
-ctx.fill();
-ctx.beginPath();
-ctx.arc(440, 140, 50, 0, 2 * Math.PI);
-ctx.fillStyle="blue"
-ctx.fill();
-ctx.beginPath();
-ctx.arc(500, 250, 50, 0, 2 * Math.PI);
-ctx.fillStyle="blue"
-ctx.fill();
-
-var crd = document.getElementById("eye_l_d");
-var crd_ctx = crd.getContext("2d");
-crd_ctx.beginPath();
-crd_ctx.arc(130, 60, 50, 0, 2 * Math.PI);
-crd_ctx.fillStyle="blue"
-crd_ctx.fill();
-crd_ctx.beginPath();
-crd_ctx.arc(230, 140, 50, 0, 2 * Math.PI);
-crd_ctx.fillStyle="blue"
-crd_ctx.fill();
-crd_ctx.beginPath();
-crd_ctx.arc(380, 140, 50, 0, 2 * Math.PI);
-crd_ctx.fillStyle="blue"
-crd_ctx.fill();
-crd_ctx.arc(470, 60, 50, 0, 2 * Math.PI);
-crd_ctx.fillStyle="blue"
-crd_ctx.fill();*/ 
-var emotions = ['Happyness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
+var emotions = ['Happiness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
+set_expression();
  function set_expression(){
-	var current_emotion = items[Math.floor(Math.random() * items.length)];
+	var current_emotion = emotions[Math.floor(Math.random() * emotions.length)];
+	console.log(current_emotion)
 	document.getElementById("h1_e").innerHTML=current_emotion;
  }
  </script>
