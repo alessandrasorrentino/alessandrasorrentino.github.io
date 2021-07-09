@@ -18,12 +18,12 @@
 			font-size=30px;
 			margin:35px;
 		}
-		
+
   </style>
  </head>
  <body style="background-color:black">
 	<center>
-		<h1>The expression to learn is: </h1><h1 id="h1_e"> </h1>
+		<h1>The emotion to learn is: </h1><h1 id="h1_e"> </h1>
 <!-- dimentsion big canvas: 600(w)*300(h) -->
 <canvas id="eye_l_u" width="300" height="150" style="position:fixed; top:20%; left:17%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
@@ -34,17 +34,43 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <canvas id="eye_r_d" width="300" height="150" style="position:fixed; top:40%; right:17%;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 <canvas id="mouth" width="600" height="400" style="position:fixed; top:55%; left:30%;"></canvas>
-	</center> 
+
+	<h2 style="position:fixed; top:80%;">Do you think this expression is coherent with the emotion ? 
+	<br><br>
+	<input type="radio" name="feedback" id="coherent" value="coherent"><label>Coherent</label>
+	<input type="radio" name="feedback" id="incoherent" value="incoherent"><label>Incoherent</label>
+	<pre><input type="button" value="Submit" onclick="send_feedback();"></pre></h2>
+	</center>
   <script src="js/draw_eyes.js"></script>
   <script src="js/draw_mouth.js"></script>
-</body>
  <script type="text/javascript" type="text/javascript">
-var emotions = ['Happiness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
-set_expression();
- function set_expression(){
+	var emotions = ['Happiness', 'Sadness', 'Fear','Disgust','Angry','Neutral','Surprise'];
+	var websocket = new WebSocket("ws://127.0.0.1:5678/");
+	/*set_expression();
+	function set_expression(){
 	var current_emotion = emotions[Math.floor(Math.random() * emotions.length)];
 	console.log(current_emotion)
 	document.getElementById("h1_e").innerHTML=current_emotion;
+	}*/
+	 websocket.onmessage = function(event){
+	 	console.log("message receive");
+	 	document.getElementById("h1_e").innerHTML=event.data; 
+	 } 
+
+ function send_feedback(){
+ 	if (document.getElementById("coherent").checked){
+ 		console.log("Coherent")
+ 		websocket.send(0);
+ 	}
+ 	if (document.getElementById("incoherent").checked){
+ 		 console.log("InCoherent")
+ 		websocket.send(1);
+		//SEND message to server
+	}
+ 	location.reload();
  }
  </script>
+
+</body>
+
 </html>
