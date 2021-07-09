@@ -1,5 +1,5 @@
-//var mouth_configurations=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14'];
-const mouth_conf=14;
+var mouth_configurations=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+const mouth_conf= mouth_configurations[Math.floor(Math.random()*mouth_configurations.length)]
 const color="orange";
 const widthLine=10;
 var canvas_mouth=document.getElementById("mouth");
@@ -11,7 +11,7 @@ function draw_mouth() {
     //console.log("I am here")
     var ctx = canvas_mouth.getContext("2d");
 	switch(mouth_conf){
-	case '0':
+	case 0:
 	ctx.beginPath();
         ctx.arc(15,75,5,0,2*Math.PI)
         ctx.fillStyle=color;
